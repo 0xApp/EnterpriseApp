@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnterpriseApp.Result", "src\EnterpriseApp.Result\EnterpriseApp.Result.csproj", "{A5F1A1B3-1B0B-4F7E-9D68-0D7BB9A6B2E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseApp.Result.Mvc", "src\EnterpriseApp.Result.Mvc\EnterpriseApp.Result.Mvc.csproj", "{F738CD4E-2A39-4C04-99F0-4004D525852C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{C68682D6-6AFA-4FC4-BD8B-1D23D4DE2585}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseApp.MvcSample", "samples\EnterpriseApp.MvcSample\EnterpriseApp.MvcSample.csproj", "{7FE5C133-608A-4BC7-9A3A-608DFAFF5C2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5F1A1B3-1B0B-4F7E-9D68-0D7BB9A6B2E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F1A1B3-1B0B-4F7E-9D68-0D7BB9A6B2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F1A1B3-1B0B-4F7E-9D68-0D7BB9A6B2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F1A1B3-1B0B-4F7E-9D68-0D7BB9A6B2E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F738CD4E-2A39-4C04-99F0-4004D525852C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F738CD4E-2A39-4C04-99F0-4004D525852C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F738CD4E-2A39-4C04-99F0-4004D525852C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F738CD4E-2A39-4C04-99F0-4004D525852C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FE5C133-608A-4BC7-9A3A-608DFAFF5C2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FE5C133-608A-4BC7-9A3A-608DFAFF5C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FE5C133-608A-4BC7-9A3A-608DFAFF5C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FE5C133-608A-4BC7-9A3A-608DFAFF5C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7FE5C133-608A-4BC7-9A3A-608DFAFF5C2C} = {C68682D6-6AFA-4FC4-BD8B-1D23D4DE2585}
+	EndGlobalSection
+EndGlobal
