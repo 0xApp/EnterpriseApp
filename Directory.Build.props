@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>13</LangVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+</Project>

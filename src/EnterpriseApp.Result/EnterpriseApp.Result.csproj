@@ -1,10 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-      <LangVersion>13</LangVersion>
     <AssemblyName>EnterpriseApp.Result</AssemblyName>
     <RootNamespace>EnterpriseApp</RootNamespace>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="OneOf" Version="3.0.271" />
