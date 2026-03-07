@@ -1,7 +1,6 @@
-using System;
 using EnterpriseApp.Errors;
 
-namespace EnterpriseApp.Result.Tests;
+namespace EnterpriseApp.Result.Tests.Result;
 
 public class ResultTests
 {

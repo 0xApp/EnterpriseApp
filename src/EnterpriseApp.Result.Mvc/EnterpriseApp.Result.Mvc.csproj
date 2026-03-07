@@ -13,6 +13,10 @@
     </ItemGroup>
 
     <ItemGroup>
+        <InternalsVisibleTo Include="EnterpriseApp.Result.Mvc.Tests" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\EnterpriseApp.Result\EnterpriseApp.Result.csproj" />
     </ItemGroup>
 

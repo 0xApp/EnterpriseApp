@@ -1,6 +1,6 @@
 using EnterpriseApp.Errors;
 
-namespace EnterpriseApp.Result.Tests;
+namespace EnterpriseApp.Result.Tests.Errors;
 
 public class ErrorTests
 {

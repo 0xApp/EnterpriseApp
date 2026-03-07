@@ -1,4 +1,4 @@
-namespace EnterpriseApp.Result.Tests;
+namespace EnterpriseApp.Result.Tests.Result;
 
 public class DomainResultTests
 {
