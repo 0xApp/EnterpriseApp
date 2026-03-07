@@ -2,7 +2,7 @@ namespace EnterpriseApp.Errors;
 
 public enum ErrorType : ushort
 {
-    NotFound = 1,
+    MissingEntity = 1,
     BusinessRuleViolation = 2,
     ValidationError = 3,
     Unauthorized = 4,

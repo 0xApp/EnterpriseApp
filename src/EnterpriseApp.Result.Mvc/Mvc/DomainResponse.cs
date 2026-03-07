@@ -18,17 +18,18 @@ public class DomainResponse<TResult, TError>(DomainResult<TResult, TError> resul
     {
         if (error is ErrorResult errorResult)
         {
-            var status = GetHttpErrorCode(errorResult.ErrorType);
             var problem = new DomainResultProblemDetails(errorResult.Errors)
-                { Status = status, Title = "Domain error", Detail = error?.ToString() };
+            {
+                Status = GetHttpErrorCode(errorResult.ErrorType), 
+                Detail = error.ToString()
+            };
             return new ObjectResult(problem);
         }
-        else
+        
+        return new ObjectResult(error)
         {
-            var status = StatusCodes.Status400BadRequest;
-            var problem = new ProblemDetails { Status = status, Title = "Domain error", Detail = error?.ToString() };
-            return new ObjectResult(problem);
-        }
+            StatusCode = DomainResponseExtensions.ResolveStatusCode(error)
+        };
     }
 
     private static int GetHttpErrorCode(ErrorType errorResultErrorType)
@@ -37,9 +38,9 @@ public class DomainResponse<TResult, TError>(DomainResult<TResult, TError> resul
         {
             ErrorType.Unauthorized => StatusCodes.Status401Unauthorized,
             ErrorType.Forbidden => StatusCodes.Status403Forbidden,
-            ErrorType.NotFound => StatusCodes.Status404NotFound,
-            ErrorType.BusinessRuleViolation => StatusCodes.Status422UnprocessableEntity,
-            _ => StatusCodes.Status400BadRequest
+            ErrorType.MissingEntity => StatusCodes.Status404NotFound,
+            ErrorType.ValidationError => StatusCodes.Status400BadRequest,
+            _ => StatusCodes.Status422UnprocessableEntity
         };
     }
 }

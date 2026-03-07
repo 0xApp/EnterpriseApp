@@ -12,7 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
 		README.md = README.md
+		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseApp.Result.Tests", "tests\EnterpriseApp.Result.Tests\EnterpriseApp.Result.Tests.csproj", "{ED5F0E19-C158-46F5-9552-5EE89240CA97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +35,10 @@ Global
 		{7FE5C133-608A-4BC7-9A3A-608DFAFF5C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FE5C133-608A-4BC7-9A3A-608DFAFF5C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FE5C133-608A-4BC7-9A3A-608DFAFF5C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED5F0E19-C158-46F5-9552-5EE89240CA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED5F0E19-C158-46F5-9552-5EE89240CA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED5F0E19-C158-46F5-9552-5EE89240CA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED5F0E19-C158-46F5-9552-5EE89240CA97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7FE5C133-608A-4BC7-9A3A-608DFAFF5C2C} = {C68682D6-6AFA-4FC4-BD8B-1D23D4DE2585}
