@@ -38,5 +38,8 @@ jobs:
       - name: Pack EnterpriseApp.Result.Mvc
         run: dotnet pack src/EnterpriseApp.Result.Mvc/EnterpriseApp.Result.Mvc.csproj --configuration Release --no-build -p:PackageVersion=${{ steps.version.outputs.VERSION }} --output ./nupkgs
 
+      - name: Pack EnterpriseApp.Cache
+        run: dotnet pack src/EnterpriseApp.Cache/EnterpriseApp.Cache.csproj --configuration Release --no-build -p:PackageVersion=${{ steps.version.outputs.VERSION }} --output ./nupkgs
+
       - name: Push to NuGet
         run: dotnet nuget push ./nupkgs/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate

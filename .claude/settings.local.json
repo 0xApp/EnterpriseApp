@@ -6,7 +6,14 @@
       "Bash(xargs wc:*)",
       "Bash(dotnet restore:*)",
       "Bash(dotnet test:*)",
-      "Bash(dotnet sln:*)"
+      "Bash(dotnet sln:*)",
+      "Bash(find:*)",
+      "WebSearch",
+      "mcp__cwm-roslyn-navigator__find_implementations",
+      "mcp__cwm-roslyn-navigator__get_diagnostics",
+      "mcp__cwm-roslyn-navigator__detect_antipatterns",
+      "mcp__cwm-roslyn-navigator__get_test_coverage_map",
+      "mcp__cwm-roslyn-navigator__find_dead_code"
     ]
   }
 }
