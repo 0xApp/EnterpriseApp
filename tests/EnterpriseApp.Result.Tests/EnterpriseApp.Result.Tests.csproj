@@ -9,13 +9,13 @@
         <RootNamespace>EnterpriseApp.Result.Tests</RootNamespace>
         <TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
         <SuppressTfmSupportBuildErrors>true</SuppressTfmSupportBuildErrors>
-        <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+        <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="coverlet.collector"/>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" />
-        <PackageReference Include="xunit.v3"/>
+        <PackageReference Include="coverlet.MTP"/>
+        <PackageReference Include="Microsoft.Testing.Platform" />
+        <PackageReference Include="xunit.v3.mtp-v2"/>
     </ItemGroup>
 
     <ItemGroup>
