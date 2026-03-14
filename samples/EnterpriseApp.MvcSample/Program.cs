@@ -1,6 +1,6 @@
 namespace EnterpriseApp.MvcSample;
 
-public class Program
+public static class Program
 {
     public static void Main(string[] args)
     {
@@ -29,8 +29,7 @@ public class Program
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "EnterpriseApp.MvcSample API v1");
-                // Uncomment to serve UI at application root:
-                // c.RoutePrefix = string.Empty;
+                c.RoutePrefix = string.Empty;
             });
         }
 

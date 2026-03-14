@@ -300,7 +300,7 @@ public sealed class LruCache<TKey, TValue> : ILruCache<TKey, TValue>
         _head.Next = node;
     }
 
-    private void Detach(CacheNode node)
+    private static void Detach(CacheNode node)
     {
         node.Previous!.Next = node.Next;
         node.Next!.Previous = node.Previous;

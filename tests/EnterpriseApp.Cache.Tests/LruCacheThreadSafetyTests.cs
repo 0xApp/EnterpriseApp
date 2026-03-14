@@ -79,6 +79,9 @@ public class LruCacheThreadSafetyTests
         })).ToArray();
 
         await Task.WhenAll(tasks.Concat(mutateTasks).ToArray());
+
+        // Verify cache is still in a valid state after concurrent enumeration and mutation
+        Assert.True(cache.Count is > 0 and <= 100);
     }
 
     [Fact]
