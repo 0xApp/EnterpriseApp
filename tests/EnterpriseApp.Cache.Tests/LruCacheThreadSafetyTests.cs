@@ -5,7 +5,7 @@ namespace EnterpriseApp.Cache.Tests;
 public class LruCacheThreadSafetyTests
 {
     [Fact]
-    public void ConcurrentAddAndGet_DoesNotCorruptState()
+    public async Task ConcurrentAddAndGet_DoesNotCorruptState()
     {
         var cache = new LruCache<int, int>(100);
         const int iterations = 10_000;
@@ -21,13 +21,13 @@ public class LruCacheThreadSafetyTests
             }
         })).ToArray();
 
-        Task.WaitAll(tasks);
+        await Task.WhenAll(tasks);
 
         Assert.True(cache.Count is > 0 and <= 100);
     }
 
     [Fact]
-    public void Count_NeverExceedsCapacity_UnderContention()
+    public async Task Count_NeverExceedsCapacity_UnderContention()
     {
         const int capacity = 50;
         var cache = new LruCache<int, int>(capacity);
@@ -45,14 +45,14 @@ public class LruCacheThreadSafetyTests
             }
         })).ToArray();
 
-        Task.WaitAll(tasks);
+        await Task.WhenAll(tasks);
 
         Assert.True(maxObserved <= capacity,
             $"Max observed count {maxObserved} exceeded capacity {capacity}");
     }
 
     [Fact]
-    public void ConcurrentEnumeration_DoesNotThrow()
+    public async Task ConcurrentEnumeration_DoesNotThrow()
     {
         var cache = new LruCache<int, int>(100);
         for (var i = 0; i < 100; i++)
@@ -78,11 +78,11 @@ public class LruCacheThreadSafetyTests
             }
         })).ToArray();
 
-        Task.WaitAll(tasks.Concat(mutateTasks).ToArray());
+        await Task.WhenAll(tasks.Concat(mutateTasks).ToArray());
     }
 
     [Fact]
-    public void ConcurrentRemoveAndAdd_MaintainsConsistency()
+    public async Task ConcurrentRemoveAndAdd_MaintainsConsistency()
     {
         var cache = new LruCache<int, int>(50);
         const int iterations = 5_000;
@@ -98,7 +98,7 @@ public class LruCacheThreadSafetyTests
             }
         })).ToArray();
 
-        Task.WaitAll(tasks);
+        await Task.WhenAll(tasks);
 
         Assert.True(cache.Count <= 50);
     }
