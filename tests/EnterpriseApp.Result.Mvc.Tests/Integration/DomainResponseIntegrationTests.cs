@@ -39,17 +39,17 @@ public class DomainResponseIntegrationTests : IDisposable
     [Fact]
     public async Task Success_Returns200WithValue()
     {
-        var response = await _client.GetAsync("/test/success");
+        var response = await _client.GetAsync("/test/success", TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        var content = await response.Content.ReadAsStringAsync();
+        var content = await response.Content.ReadAsStringAsync(TestContext.Current.CancellationToken);
         Assert.Contains("hello", content);
     }
 
     [Fact]
     public async Task NotFound_Returns404WithProblemDetails()
     {
-        var response = await _client.GetAsync("/test/not-found");
+        var response = await _client.GetAsync("/test/not-found", TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
         var json = await DeserializeResponse(response);
@@ -63,7 +63,7 @@ public class DomainResponseIntegrationTests : IDisposable
     [Fact]
     public async Task Unauthorized_Returns401WithProblemDetails()
     {
-        var response = await _client.GetAsync("/test/unauthorized");
+        var response = await _client.GetAsync("/test/unauthorized", TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
         var json = await DeserializeResponse(response);
@@ -75,7 +75,7 @@ public class DomainResponseIntegrationTests : IDisposable
     [Fact]
     public async Task Forbidden_Returns403WithProblemDetails()
     {
-        var response = await _client.GetAsync("/test/forbidden");
+        var response = await _client.GetAsync("/test/forbidden", TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
         var json = await DeserializeResponse(response);
@@ -87,7 +87,7 @@ public class DomainResponseIntegrationTests : IDisposable
     [Fact]
     public async Task ValidationError_Returns400WithMultipleErrors()
     {
-        var response = await _client.GetAsync("/test/validation-error");
+        var response = await _client.GetAsync("/test/validation-error", TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
         var json = await DeserializeResponse(response);
@@ -101,7 +101,7 @@ public class DomainResponseIntegrationTests : IDisposable
     [Fact]
     public async Task BusinessRuleViolation_Returns422WithProblemDetails()
     {
-        var response = await _client.GetAsync("/test/business-rule");
+        var response = await _client.GetAsync("/test/business-rule", TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.UnprocessableEntity, response.StatusCode);
         var json = await DeserializeResponse(response);
@@ -112,7 +112,7 @@ public class DomainResponseIntegrationTests : IDisposable
 
     private static async Task<JsonElement> DeserializeResponse(HttpResponseMessage response)
     {
-        var content = await response.Content.ReadAsStringAsync();
+        var content = await response.Content.ReadAsStringAsync(TestContext.Current.CancellationToken);
         return JsonSerializer.Deserialize<JsonElement>(content, JsonOptions);
     }
 }

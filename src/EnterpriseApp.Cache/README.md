@@ -14,10 +14,16 @@ A high-performance, thread-safe caching library for .NET targeting `netstandard2
 
 ## Installation
 
-Add a project reference:
+### .NET CLI
 
-```xml
-<ProjectReference Include="..\EnterpriseApp.Cache\EnterpriseApp.Cache.csproj" />
+```bash
+dotnet add package EnterpriseApp.Cache
+```
+
+### Package Manager Console
+
+```powershell
+Install-Package EnterpriseApp.Cache
 ```
 
 ## Quick Start
@@ -61,4 +67,3 @@ foreach (var kvp in cache)
 | Package | Target |
 |---------|--------|
 | EnterpriseApp.Cache | `netstandard2.1` |
-| EnterpriseApp.Cache.Tests | `net6.0` through `net10.0` |
