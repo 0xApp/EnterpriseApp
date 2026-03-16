@@ -26,5 +26,9 @@
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "sonarqube"
-  ]
+  ],
+  "enabledPlugins": {
+    "dotnet-diag@dotnet-agent-skills": true,
+    "csharp-lsp@claude-plugins-official": true
+  }
 }

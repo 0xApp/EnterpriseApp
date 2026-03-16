@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace EnterpriseApp.Result.Mvc;
 
-public class DomainResponse<TResult, TError>(DomainResult<TResult, TError> result) : IConvertToActionResult
+public sealed class DomainResponse<TResult, TError>(DomainResult<TResult, TError> result) : IConvertToActionResult
 {
     public static implicit operator DomainResponse<TResult, TError>(DomainResult<TResult, TError> inner) => new(inner);
     public static implicit operator DomainResponse<TResult, TError>(TResult inner) => new(inner);
@@ -45,7 +45,7 @@ public class DomainResponse<TResult, TError>(DomainResult<TResult, TError> resul
     }
 }
 
-internal class DomainResultProblemDetails(Error[] errors) : ProblemDetails
+internal sealed class DomainResultProblemDetails(Error[] errors) : ProblemDetails
 {
     public Error[] Errors { get; set; } = errors;
 }

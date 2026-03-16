@@ -21,11 +21,5 @@ public readonly struct Error : IEquatable<Error>
 
     public bool Equals(Error other) => Code == other.Code && Message == other.Message;
     public override bool Equals(object obj) => obj is Error other && Equals(other);
-    public override int GetHashCode()
-    {
-        unchecked
-        {
-            return ((Code?.GetHashCode() ?? 0) * 397) ^ (Message?.GetHashCode() ?? 0);
-        }
-    }
+    public override int GetHashCode() => HashCode.Combine(Code, Message);
 }

@@ -2,7 +2,7 @@ using EnterpriseApp.Errors;
 
 namespace EnterpriseApp.Result;
 
-public class Result<TResult> : DomainResult<TResult, ErrorResult>
+public sealed class Result<TResult> : DomainResult<TResult, ErrorResult>
 {
     internal Result(TResult value) : base(value)
     {

@@ -58,7 +58,7 @@ public sealed class LruCache<TKey, TValue> : ILruCache<TKey, TValue>
         if (options is null)
             throw new ArgumentNullException(nameof(options));
 
-        var callbacks = options.PostEvictionCallbacks.Count > 0
+        var callbacks = options.HasCallbacks
             ? new List<PostEvictionCallbackRegistration<TKey, TValue>>(options.PostEvictionCallbacks)
             : null;
 

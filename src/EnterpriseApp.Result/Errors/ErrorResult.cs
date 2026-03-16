@@ -2,7 +2,7 @@ using System;
 
 namespace EnterpriseApp.Errors;
 
-public class ErrorResult
+public sealed class ErrorResult
 {
     public ErrorType ErrorType { get; }
 
